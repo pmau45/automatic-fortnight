@@ -1,0 +1,487 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Local SEO Meta Tags -->
+    <title>Expert Car Detailing in Jacksonville, FL | Jax Elite Detailing</title>
+    <meta name="description" content="Premium car detailing services in Jacksonville, FL. We specialize in interior and exterior detailing, washing, waxing, paint correction, and ceramic coating.">
+    <meta name="keywords" content="car detailing Jacksonville FL, auto detailing Jax, car wash Jacksonville, interior car detailing, exterior detailing, car waxing Jacksonville">
+    <meta name="author" content="Jax Elite Detailing">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Expert Car Detailing in Jacksonville, FL">
+    <meta property="og:description" content="Premium car detailing services in Jacksonville, FL. Book your detail today!">
+    <meta property="og:type" content="website">
+    <meta property="og:locality" content="Jacksonville">
+    <meta property="og:region" content="FL">
+
+    <!-- JSON-LD Local Business Schema Markup for Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoWash",
+      "name": "Jax Elite Detailing",
+      "image": "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80",
+      "@id": "https://www.jaxelitedetailing.example.com",
+      "url": "https://www.jaxelitedetailing.example.com",
+      "telephone": "+1-904-523-8516",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main St",
+        "addressLocality": "Jacksonville",
+        "addressRegion": "FL",
+        "postalCode": "32202",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.3321838,
+        "longitude": -81.655651
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Jacksonville"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/example",
+        "https://www.instagram.com/example"
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        accent: '#06b6d4', // Cyan 500
+                        accentHover: '#0891b2', // Cyan 600
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & Phosphor Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Custom CSS for Animations -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f3f4f6; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Montserrat', sans-serif; }
+        
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Hero Background Animation */
+        .hero-bg {
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #06b6d4, #3b82f6);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-darker/80 border-b border-gray-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="ph-fill ph-car-profile text-3xl text-accent"></i>
+                    <span class="font-heading font-bold text-xl tracking-wide uppercase text-white">Jax Elite<br><span class="text-accent text-sm">Detailing</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-accent transition-colors font-medium">Home</a>
+                    <a href="#services" class="text-gray-300 hover:text-accent transition-colors font-medium">Services</a>
+                    <a href="#about" class="text-gray-300 hover:text-accent transition-colors font-medium">About Jax</a>
+                    <a href="#contact" class="px-6 py-2.5 rounded-full bg-accent hover:bg-accentHover text-white font-semibold transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)] transform hover:-translate-y-0.5">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darker border-b border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-gray-900 rounded-md">Home</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-gray-900 rounded-md">Services</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-gray-900 rounded-md">About Jax</a>
+                <a href="#contact" class="block px-3 py-2 mt-4 text-center text-base font-bold text-white bg-accent rounded-md">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1920&q=80" alt="Car Detailing Jacksonville" class="w-full h-full object-cover hero-bg">
+            <div class="absolute inset-0 bg-gradient-to-b from-darker/90 via-darker/70 to-dark"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-10">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-gray-800/50 border border-gray-700 backdrop-blur-sm mb-6 reveal">
+                <span class="text-sm font-semibold text-accent tracking-wider uppercase">Serving All of Jacksonville, FL</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight reveal delay-100 drop-shadow-lg">
+                Revive Your Ride with <br class="hidden md:block"/> 
+                <span class="text-gradient">Premium Detailing</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300 mb-10 reveal delay-200">
+                From deep interior cleaning to flawless exterior waxing and polishing. We bring the ultimate showroom shine right here in Jax.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal delay-300">
+                <a href="#contact" class="px-8 py-4 rounded-full bg-accent hover:bg-accentHover text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] transform hover:-translate-y-1">
+                    Get a Free Quote
+                </a>
+                <a href="#services" class="px-8 py-4 rounded-full bg-transparent border-2 border-gray-500 hover:border-white text-white font-bold text-lg transition-all transform hover:-translate-y-1">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10 hidden md:block text-gray-400">
+            <i class="ph ph-caret-down text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Section (SEO Optimized) -->
+    <section id="services" class="py-24 bg-dark relative">
+        <!-- Abstract Background Element -->
+        <div class="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full bg-accent/5 blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-accent font-bold tracking-widest uppercase text-sm mb-2">Our Services</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4">Simple & Professional</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Quality detailing without the confusion. Choose the package that fits your needs.</p>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Exterior Service Card -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-accent/50 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(6,182,212,0.1)] reveal">
+                    <div class="w-14 h-14 rounded-xl bg-gray-800 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white text-accent transition-colors">
+                        <i class="ph ph-sparkle text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Exterior Wash & Wax</h4>
+                    <p class="text-gray-400">A thorough hand wash, wheel cleaning, and a protective wax layer to keep your car shining and protected.</p>
+                </div>
+
+                <!-- Interior Service Card -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-accent/50 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(6,182,212,0.1)] reveal delay-100">
+                    <div class="w-14 h-14 rounded-xl bg-gray-800 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white text-accent transition-colors">
+                        <i class="ph ph-armchair text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Interior Deep Clean</h4>
+                    <p class="text-gray-400">Complete vacuuming, surface wipe-down, and deep cleaning to make your interior feel and smell brand new.</p>
+                </div>
+
+                <!-- Full Detail -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-accent/50 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(6,182,212,0.1)] reveal delay-200">
+                    <div class="w-14 h-14 rounded-xl bg-gray-800 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white text-accent transition-colors">
+                        <i class="ph ph-car text-3xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">The Full Detail</h4>
+                    <p class="text-gray-400">The best of both worlds. A complete interior and exterior overhaul for the ultimate vehicle refresh.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Local SEO / About Section -->
+    <section id="about" class="py-24 bg-darker border-y border-gray-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image side -->
+                <div class="w-full lg:w-1/2 relative reveal">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-accent to-blue-600 rounded-2xl opacity-20 blur-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=800&q=80" alt="Jacksonville Auto Detailing Service" class="relative rounded-2xl shadow-2xl border border-gray-700 w-full h-[500px] object-cover">
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-gray-900 border border-gray-700 p-6 rounded-xl shadow-xl hidden md:block animate-bounce" style="animation-duration: 3s;">
+                        <div class="flex items-center gap-4">
+                            <div class="text-accent text-4xl font-bold">5<span class="text-2xl">★</span></div>
+                            <div>
+                                <p class="text-white font-bold text-sm">Top Rated in</p>
+                                <p class="text-gray-400 text-xs">Jacksonville, FL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content side -->
+                <div class="w-full lg:w-1/2 reveal delay-200">
+                    <h2 class="text-accent font-bold tracking-widest uppercase text-sm mb-2">Local Experts</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Jacksonville's Premier Auto Detailing Choice</h3>
+                    <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                        Whether you're cruising down A1A or commuting from Southside to Downtown Jax, the Florida environment takes a toll on your vehicle. Founded and operated by <strong>Chris Cregg</strong>, Jax Elite Detailing understands the specific needs of cars in Duval County.
+                    </p>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        Chris and his team use eco-friendly, high-grade products to tackle everything from stubborn love bugs on your bumper to sand trapped deep in your interior carpets. We don't just wash cars; we restore and protect them.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h5 class="text-white font-bold text-xl mb-1">100%</h5>
+                            <p class="text-gray-500 text-sm">Satisfaction Guaranteed</p>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold text-xl mb-1">Mobile or Shop</h5>
+                            <p class="text-gray-500 text-sm">We can come to you</p>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="inline-flex items-center gap-2 text-accent font-bold hover:text-white transition-colors group">
+                        Book Your Appointment 
+                        <i class="ph-bold ph-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact Form -->
+    <section id="contact" class="py-24 bg-dark relative">
+        <div class="absolute top-1/2 left-0 -ml-40 -mt-40 w-96 h-96 rounded-full bg-blue-600/5 blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-900 rounded-3xl p-8 md:p-12 lg:p-16 border border-gray-800 shadow-2xl relative overflow-hidden reveal">
+                <!-- Decor -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-accent opacity-10 rounded-full blur-[80px]"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                    <!-- Info -->
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready for that Showroom Shine?</h2>
+                        <p class="text-gray-400 mb-8 text-lg">Secure your spot today. Fill out the form, and our Jacksonville team will get back to you with a custom quote within 24 hours.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="ph-fill ph-map-pin text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white font-semibold">Service Area</h5>
+                                    <p class="text-gray-400">Jacksonville, FL & Surrounding Areas (Duval, St. Johns, Clay)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="ph-fill ph-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white font-semibold">Call or Text Us</h5>
+                                    <p class="text-gray-400">(904) 523-8516</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-accent flex-shrink-0">
+                                    <i class="ph-fill ph-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-white font-semibold">Hours</h5>
+                                    <p class="text-gray-400">Mon - Sat: 8:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="bg-darker p-8 rounded-2xl border border-gray-800">
+                        <form name="contact" method="POST" data-netlify="true">
+                            <div class="space-y-5">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                                    <input type="text" name="name" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors" placeholder="John Doe" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-1">Phone or Email</label>
+                                    <input type="text" name="contact_info" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors" placeholder="(904) 523-8516" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-1">Service Needed</label>
+                                    <select name="service" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors appearance-none" required>
+                                        <option value="" disabled selected>Select a package...</option>
+                                        <option value="interior">Interior Deep Clean</option>
+                                        <option value="exterior">Exterior Wash & Wax</option>
+                                        <option value="full">The Full Detail</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-1">Vehicle Make/Model (Optional)</label>
+                                    <input type="text" name="vehicle" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors" placeholder="e.g. 2021 Ford F-150">
+                                </div>
+                                <button type="submit" class="w-full py-4 rounded-lg bg-accent hover:bg-accentHover text-white font-bold text-lg transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] mt-4">
+                                    Request Quote
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker border-t border-gray-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="ph-fill ph-car-profile text-3xl text-accent"></i>
+                        <span class="font-heading font-bold text-xl uppercase text-white">Jax Elite Detailing</span>
+                    </div>
+                    <p class="text-gray-500 max-w-sm mb-6">The trusted name for premium automotive detailing, washing, and waxing in Jacksonville, Florida. We treat every vehicle like it's our own.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-accent hover:bg-gray-800 transition-colors"><i class="ph-fill ph-facebook-logo text-xl"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-accent hover:bg-gray-800 transition-colors"><i class="ph-fill ph-instagram-logo text-xl"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-accent hover:bg-gray-800 transition-colors"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-500">
+                        <li><a href="#services" class="hover:text-accent transition-colors">Exterior Wash & Wax</a></li>
+                        <li><a href="#services" class="hover:text-accent transition-colors">Interior Deep Clean</a></li>
+                        <li><a href="#services" class="hover:text-accent transition-colors">The Full Detail</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Service Areas</h4>
+                    <ul class="space-y-2 text-gray-500">
+                        <li>Jacksonville (Duval)</li>
+                        <li>Jacksonville Beach</li>
+                        <li>Ponte Vedra</li>
+                        <li>Orange Park</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-sm">© <span id="year"></span> Jax Elite Detailing. All rights reserved.</p>
+                <div class="flex gap-4 text-sm text-gray-600">
+                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Navbar background change on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'bg-darker/95');
+                navbar.classList.remove('bg-darker/80');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-darker/95');
+                navbar.classList.add('bg-darker/80');
+            }
+        });
+
+        // Intersection Observer for Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
+
+
+```
